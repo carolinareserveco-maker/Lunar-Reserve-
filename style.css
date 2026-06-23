@@ -1,0 +1,278 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #101827;
+}
+
+.top-banner {
+  background: #101827;
+  color: #d4af37;
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: bold;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 2px solid #101827;
+  z-index: 10;
+}
+
+nav {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.logo span {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: #d4af37;
+}
+
+.nav-links a {
+  color: #101827;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  text-decoration: underline;
+}
+
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 20px;
+  border-bottom: 2px solid #101827;
+  background:
+    radial-gradient(circle at top left, #e9e9e9, transparent 30%),
+    radial-gradient(circle at bottom right, #fff3c4, transparent 30%),
+    white;
+}
+
+.hero h1 {
+  font-size: clamp(55px, 10vw, 120px);
+  text-transform: uppercase;
+  line-height: 0.9;
+  font-weight: 900;
+  color: #101827;
+}
+
+.hero h2 {
+  color: #d4af37;
+  margin-top: 15px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.hero p {
+  max-width: 650px;
+  margin: 25px auto;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.btn {
+  display: inline-block;
+  background: #101827;
+  color: white;
+  padding: 14px 28px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid #101827;
+  transition: 0.2s;
+}
+
+.btn:hover {
+  background: white;
+  color: #101827;
+}
+
+section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 70px 20px;
+}
+
+.section-title {
+  font-size: 42px;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+  border-bottom: 2px solid #101827;
+  padding-bottom: 15px;
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.product-card {
+  border: 2px solid #101827;
+  padding: 20px;
+  background: white;
+  transition: 0.2s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 8px 8px 0 #d4af37;
+}
+
+.product-img {
+  height: 250px;
+  border: 2px solid #101827;
+  margin-bottom: 20px;
+  background: #f8f8f8;
+  overflow: hidden;
+}
+
+.product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.product-card h3 {
+  font-size: 24px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.blend-type {
+  color: #d4af37;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.product-card p {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.price {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.about-box {
+  border: 2px solid #101827;
+  padding: 35px;
+  font-size: 18px;
+  line-height: 1.7;
+  background: #fafafa;
+}
+
+form {
+  border: 2px solid #101827;
+  padding: 35px;
+  display: grid;
+  gap: 18px;
+  background: #fafafa;
+}
+
+label {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 14px;
+  border: 2px solid #101827;
+  font-size: 16px;
+  background: white;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button {
+  background: #101827;
+  color: white;
+  padding: 15px;
+  border: 2px solid #101827;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: white;
+  color: #101827;
+}
+
+.warning {
+  font-size: 13px;
+  line-height: 1.5;
+  color: #555;
+  margin-top: 15px;
+}
+
+footer {
+  background: #101827;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 50px;
+}
+
+footer span {
+  color: #d4af37;
+}
+
+@media (max-width: 700px) {
+  nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    margin: 0 10px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+}
