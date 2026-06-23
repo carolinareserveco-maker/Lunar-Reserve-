@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carolina Reserve Botanicals</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #fff;
+      color: #111;
+    }
+
+    .top-banner {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 14px;
+      letter-spacing: 1px;
+      font-weight: bold;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: white;
+      border-bottom: 2px solid #111;
+      z-index: 10;
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: auto;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 26px;
+      font-weight: 900;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .nav-links a {
+      color: #111;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    .hero {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      border-bottom: 2px solid #111;
+      background:
+        radial-gradient(circle at top left, #f4e7ff, transparent 30%),
+        radial-gradient(circle at bottom right, #e6f7ff, transparent 30%),
+        white;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 9vw, 110px);
+      text-transform: uppercase;
+      line-height: 0.9;
+      font-weight: 900;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: 25px auto;
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #111;
+      color: white;
+      padding: 14px 28px;
+      text-decoration: none;
+      font-weight: bold;
+      text-transform: uppercase;
+      border: 2px solid #111;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      background: white;
+      color: #111;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: auto;
+      padding: 70px 20px;
+    }
+
+    .section-title {
+      font-size: 42px;
+      text-transform: uppercase;
+      margin-bottom: 35px;
+      border-bottom: 2px solid #111;
+      padding-bottom: 15px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+    }
+
+    .product-card {
+      border: 2px solid #111;
+      padding: 20px;
+      transition: 0.2s;
+      background: white;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 8px 8px 0 #111;
+    }
+
+    .product-img {
+      height: 250px;
+      border: 2px solid #111;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 70px;
+      margin-bottom: 20px;
+      background: #fafafa;
+    }
+
+    .product-card h3 {
+      font-size: 24px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .product-card p {
+      line-height: 1.5;
+      margin-bottom: 15px;
+    }
+
+    .price {
+      font-size: 22px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    .about-box {
+      border: 2px solid #111;
+      padding: 35px;
+      font-size: 18px;
+      line-height: 1.7;
+      background: #fafafa;
+    }
+
+    form {
+      border: 2px solid #111;
+      padding: 35px;
+      display: grid;
+      gap: 18px;
+      background: #fafafa;
+    }
+
+    label {
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid #111;
+      font-size: 16px;
+      background: white;
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    button {
+      background: #111;
+      color: white;
+      padding: 15px;
+      border: 2px solid #111;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: white;
+      color: #111;
+    }
+
+    footer {
+      background: #111;
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+
+    .warning {
+      font-size: 13px;
+      line-height: 1.5;
+      color: #555;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      .nav-links a {
+        margin: 0 10px;
+      }
+
+      .hero h1 {
+        font-size: 50px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="top-banner">
+    DREAMY HERBAL BLENDS • HAND-PACKED • SMALL BATCH
+  </div>
+
+  <header>
+    <nav>
+      <div class="logo">Carolina Reserve</div>
+      <div class="nav-links">
+        <a href="#shop">Shop</a>
+        <a href="#about">About</a>
+        <a href="#order">Order</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>Dream Leaf<br>Collection</h1>
+      <p>
+        Smooth herbal blends crafted for calm nights, mellow moods,
+        and slow-burning relaxation. No tobacco. No nicotine.
+      </p>
+      <a href="#shop" class="btn">Shop Now</a>
+    </div>
+  </div>
+
+  <section id="shop">
+    <h2 class="section-title">Shop</h2>
+
+    <div class="products">
+      <div class="product-card">
+        <div class="product-img">🌙</div>
+        <h3>Moonveil</h3>
+        <p>Blue lotus, damiana, wild dagga, chamomile, and marshmallow leaf.</p>
+        <div class="price">$9.99</div>
+        <a href="#order" class="btn">Order</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">🔥</div>
+        <h3>Velvet Ember</h3>
+        <p>A warmer mood blend with damiana, wild dagga, blue lotus, and herbs.</p>
+        <div class="price">$9.99</div>
+        <a href="#order" class="btn">Order</a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-img">🌿</div>
+        <h3>Nocturne</h3>
+        <p>A calming night blend with chamomile, blue lotus, and smooth herbal base.</p>
+        <div class="price">$11.99</div>
+        <a href="#order" class="btn">Order</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About</h2>
+
+    <div class="about-box">
+      <p>
+        Carolina Reserve Botanicals creates small-batch herbal blends made for
+        people who want a smoother, tobacco-free smoking experience. Our blends
+        focus on calm flavor, relaxing aroma, and a clean visual style.
+      </p>
+
+      <br />
+
+      <p>
+        Each blend is packed with selected botanicals like blue lotus, damiana,
+        chamomile, wild dagga, and marshmallow leaf. Because apparently even
+        plants need branding now, and somehow here we are.
+      </p>
+
+      <p class="warning">
+        These products are not intended to diagnose, treat, cure, or prevent
+        any disease. Smoking any plant material may irritate the lungs. Must be
+        of legal age to purchase.
+      </p>
+    </div>
+  </section>
+
+  <section id="order">
+    <h2 class="section-title">Order</h2>
+
+    <form action="mailto:your-email@example.com" method="POST" enctype="text/plain">
+      <div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="Name" required />
+      </div>
+
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="Email" required />
+      </div>
+
+      <div>
+        <label for="blend">Choose Blend</label>
+        <select id="blend" name="Blend">
+          <option>Moonveil</option>
+          <option>Velvet Ember</option>
+          <option>Nocturne</option>
+        </select>
+      </div>
+
+      <div>
+        <label for="quantity">Quantity</label>
+        <input type="number" id="quantity" name="Quantity" min="1" value="1" />
+      </div>
+
+      <div>
+        <label for="message">Order Notes</label>
+        <textarea id="message" name="Message" placeholder="Any special requests?"></textarea>
+      </div>
+
+      <button type="submit">Send Order</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2026 Carolina Reserve Botanicals</p>
+  </footer>
+</body>
+</html>
