@@ -1,4 +1,4 @@
-:root{
+{
 --gold:#d4a028;
 --dark:#101827;
 --light:#fafafa;
@@ -7,24 +7,24 @@
 *{
 margin:0;
 padding:0;
-box-sizing:border-box;
+box-sizing;
 }
 
 html{
-scroll-behavior:smooth;
+scroll-behavior;
 }
 
 body{
 font-family:'Montserrat',sans-serif;
 background:#ffffff;
-color:var(--dark);
+color(--dark);
 line-height:1.6;
 }
 
 .top-banner{
 background:#000;
-color:var(--gold);
-text-align:center;
+color(--gold);
+text-align;
 padding:12px;
 font-size:14px;
 letter-spacing:2px;
@@ -32,19 +32,19 @@ font-weight:500;
 }
 
 header{
-background:white;
+background;
 border-bottom:2px solid #111;
-position:sticky;
+position;
 top:0;
 z-index:100;
 }
 
 nav{
 max-width:1300px;
-margin:auto;
-display:flex;
-justify-content:space-between;
-align-items:center;
+margin;
+display;
+justify-content;
+align-items;
 padding:22px 30px;
 }
 
@@ -52,41 +52,40 @@ padding:22px 30px;
 font-size:28px;
 font-weight:700;
 letter-spacing:2px;
-text-transform:uppercase;
+text-transform;
 }
 
 .logo span{
-display:block;
-color:var(--gold);
+display;
+color(--gold);
 font-size:12px;
 letter-spacing:4px;
 margin-top:4px;
 }
 
 .nav-links{
-display:flex;
+display;
 gap:40px;
 }
 
 .nav-links a{
-text-decoration:none;
-color:var(--dark);
-text-transform:uppercase;
+text-decoration;
+color(--dark);
+text-transform;
 font-weight:600;
 letter-spacing:1px;
 transition:.25s;
 }
 
-.nav-links a:hover{
-color:var(--gold);
+.nav-links a{
+color(--gold);
 }
 
 .hero{
-position:relative;
-overflow:hidden;
+position;
+overflow;
 min-height:720px;
 
-```
 display:flex;
 justify-content:center;
 align-items:center;
@@ -96,7 +95,6 @@ background:
 radial-gradient(circle at 15% 25%, rgba(212,160,40,.12), transparent 20%),
 radial-gradient(circle at 85% 20%, rgba(212,160,40,.12), transparent 20%),
 linear-gradient(180deg,#fafafa,#f1f1f1);
-```
 
 }
 
@@ -107,23 +105,23 @@ padding:40px;
 
 .hero h1{
 font-family:'Cormorant Garamond',serif;
-font-size:clamp(90px,12vw,170px);
+font-size(90px,12vw,170px);
 line-height:.82;
 font-weight:700;
-text-transform:uppercase;
+text-transform;
 letter-spacing:2px;
 }
 
 .hero h2{
-color:var(--gold);
+color(--gold);
 letter-spacing:6px;
-text-transform:uppercase;
+text-transform;
 font-weight:500;
 margin-top:18px;
 }
 
 .gold-divider{
-color:var(--gold);
+color(--gold);
 font-size:24px;
 margin:18px 0;
 }
@@ -136,44 +134,44 @@ font-weight:300;
 }
 
 .moon-left{
-position:absolute;
+position;
 left:40px;
 top:120px;
 font-size:180px;
-color:var(--gold);
+color(--gold);
 opacity:.45;
 }
 
 .moon-right{
-position:absolute;
+position;
 right:40px;
 top:120px;
 font-size:90px;
-color:var(--gold);
+color(--gold);
 opacity:.45;
 }
 
 .btn{
-display:inline-block;
-text-decoration:none;
+display;
+text-decoration;
 background:#000;
-color:white;
+color;
 padding:15px 45px;
-text-transform:uppercase;
+text-transform;
 letter-spacing:2px;
 font-weight:600;
 border:2px solid #000;
 transition:.25s;
 }
 
-.btn:hover{
-background:white;
+.btn{
+background;
 color:#000;
 }
 
 section{
 max-width:1300px;
-margin:auto;
+margin;
 padding:70px 30px;
 }
 
@@ -186,33 +184,33 @@ margin-bottom:35px;
 }
 
 .products{
-display:grid;
-grid-template-columns:repeat(3,1fr);
+display;
+grid-template-columns(3,1fr);
 gap:25px;
 }
 
 .product-card{
 border:2px solid #222;
-background:white;
+background;
 padding:10px;
-text-align:center;
+text-align;
 transition:.25s;
 }
 
-.product-card:hover{
-transform:translateY(-4px);
+.product-card{
+transform(-4px);
 }
 
 .product-img{
 height:320px;
-overflow:hidden;
+overflow;
 border:2px solid #222;
 }
 
 .product-img img{
 width:100%;
 height:100%;
-object-fit:cover;
+object-fit;
 }
 
 .product-card h3{
@@ -223,13 +221,13 @@ margin-top:12px;
 }
 
 .blend-type{
-color:var(--gold);
-text-transform:uppercase;
+color(--gold);
+text-transform;
 letter-spacing:2px;
 font-weight:600;
 margin-bottom:12px;
 }
-.product-card p{
+    .product-card p{
 font-size:15px;
 margin-bottom:15px;
 min-height:70px;
@@ -246,7 +244,7 @@ width:100%;
 }
 
 .about-box{
-display:grid;
+display;
 grid-template-columns:2fr 1fr;
 gap:40px;
 border:2px solid #222;
@@ -260,11 +258,11 @@ font-size:18px;
 }
 
 .about-moon{
-display:flex;
-align-items:center;
-justify-content:center;
+display;
+align-items;
+justify-content;
 font-size:240px;
-color:var(--gold);
+color(--gold);
 opacity:.25;
 }
 
@@ -281,7 +279,7 @@ padding:40px;
 }
 
 .form-grid{
-display:grid;
+display;
 grid-template-columns:1fr 1fr;
 gap:25px;
 }
@@ -291,9 +289,9 @@ grid-column:1 / -1;
 }
 
 label{
-display:block;
+display;
 margin-bottom:8px;
-text-transform:uppercase;
+text-transform;
 font-size:13px;
 letter-spacing:1px;
 font-weight:600;
@@ -307,11 +305,11 @@ padding:14px;
 border:2px solid #222;
 font-family:'Montserrat',sans-serif;
 font-size:15px;
-background:white;
+background;
 }
 
 textarea{
-resize:vertical;
+resize;
 min-height:140px;
 }
 
@@ -319,36 +317,35 @@ min-height:140px;
 margin-top:25px;
 width:100%;
 background:#000;
-color:white;
-border:none;
+color;
+border;
 padding:18px;
 font-size:15px;
-text-transform:uppercase;
+text-transform;
 letter-spacing:2px;
-cursor:pointer;
+cursor;
 transition:.25s;
 }
 
-.submit-btn:hover{
-background:var(--gold);
+.submit-btn{
+background(--gold);
 color:#000;
 }
 
 footer{
 background:#000;
-color:white;
-text-align:center;
+color;
+text-align;
 padding:40px 20px;
 margin-top:70px;
 }
 
 footer span{
-color:var(--gold);
+color(--gold);
 }
 
 @media(max-width:1000px){
 
-```
 .products{
     grid-template-columns:1fr;
 }
@@ -372,13 +369,11 @@ color:var(--gold);
 .section-title{
     font-size:56px;
 }
-```
 
 }
 
 @media(max-width:700px){
 
-```
 nav{
     flex-direction:column;
     gap:20px;
@@ -421,6 +416,5 @@ nav{
 .product-card h3{
     font-size:42px;
 }
-```
 
 }
