@@ -148,229 +148,104 @@ section {
   transform: translateY(-5px);
   box-shadow: 8px 8px 0 #d4af37;
 }
-
 .product-img {
+  position: relative;
   height: 250px;
+  overflow: hidden;
   border: 2px solid #101827;
   margin-bottom: 20px;
-  background: #f8f8f8;
-  overflow: hidden;
 }
 
-.product-img img {
-  width: 100%;
+.dreamy-bg {
+  background: linear-gradient(180deg,#d8d0ff,#faf9ff);
+}
+
+.relaxation-bg {
+  background: linear-gradient(180deg,#edf7ea,#ffffff);
+}
+
+.sleep-bg {
+  background: linear-gradient(180deg,#fff8dc,#ffffff);
+}
+
+.joint {
+  position: absolute;
+  width: 180px;
+  height: 28px;
+  background: #d6b06f;
+  border: 2px solid #222;
+  border-radius: 20px;
+  left: 50%;
+  top: 55%;
+  transform: translate(-50%,-50%) rotate(-15deg);
+  z-index: 10;
+  box-shadow: 5px 5px 10px rgba(0,0,0,.2);
+}
+
+.joint::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 30px;
   height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-.product-card h3 {
-  font-size: 24px;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-
-.blend-type {
-  color: #d4af37;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-  font-size: 13px;
-  letter-spacing: 1px;
-}
-
-.product-card p {
-  line-height: 1.5;
-  margin-bottom: 15px;
-}
-
-.price {
-  font-size: 22px;
-  font-weight: bold;
-  margin-bottom: 15px;
-}
-
-.about-box {
-  border: 2px solid #101827;
-  padding: 35px;
-  font-size: 18px;
-  line-height: 1.7;
-  background: #fafafa;
-}
-
-form {
-  border: 2px solid #101827;
-  padding: 35px;
-  display: grid;
-  gap: 18px;
-  background: #fafafa;
-}
-
-label {
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 14px;
-}
-
-input,
-select,
-textarea {
-  width: 100%;
-  padding: 14px;
-  border: 2px solid #101827;
-  font-size: 16px;
-  background: white;
-}
-
-textarea {
-  min-height: 120px;
-  resize: vertical;
-}
-
-button {
-  background: #101827;
-  color: white;
-  padding: 15px;
-  border: 2px solid #101827;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: white;
-  color: #101827;
-}
-
-.warning {
-  font-size: 13px;
-  line-height: 1.5;
-  color: #555;
-  margin-top: 15px;
-}
-
-footer {
-  background: #101827;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 50px;
-}
-
-footer span {
-  color: #d4af37;
-}
-
-@media (max-width: 700px) {
-  nav {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .nav-links a {
-    margin: 0 10px;
-  }
-
-  .hero h1 {
-    font-size: 52px;
-  }
-}
-.product-img{
-position;
-height:250px;
-overflow;
-}
-
-.dreamy-bg{
-background(180deg,#ece8ff,#faf9ff);
-}
-
-.relaxation-bg{
-background(180deg,#edf7ea,#ffffff);
-}
-
-.sleep-bg{
-background(180deg,#fff9dc,#ffffff);
-}
-
-.joint{
-position;
-width:180px;
-height:26px;
-background:#d5b06f;
-border:2px solid #222;
-border-radius:20px;
-left:50%;
-top:55%;
-transform(-50%,-50%) rotate(-15deg);
-z-index:10;
-}
-
-.joint::after{
-content:"";
-position;
-right:0;
-width:30px;
-height:100%;
-background:#f1d57a;
-border-left:2px solid #222;
+  background: #f1d57a;
+  border-left: 2px solid #222;
 }
 
 .lotus-flower,
 .leaf,
-.flower{
-position;
-font-size:48px;
-opacity:.9;
+.flower {
+  position: absolute;
+  font-size: 48px;
+  opacity: .95;
 }
 
-.lotus1{
-top:15px;
-left:15px;
+.lotus1 {
+  top: 15px;
+  left: 15px;
 }
 
-.lotus2{
-top:25px;
-right:20px;
+.lotus2 {
+  top: 20px;
+  right: 15px;
 }
 
-.lotus3{
-bottom:15px;
-left:40%;
+.lotus3 {
+  bottom: 15px;
+  left: 40%;
 }
 
-.leaf1{
-top:15px;
-left:20px;
+.leaf1 {
+  top: 15px;
+  left: 20px;
 }
 
-.leaf2{
-bottom:15px;
-right:20px;
+.leaf2 {
+  bottom: 20px;
+  right: 20px;
 }
 
-.flower1{
-top:20px;
-right:35px;
+.flower1 {
+  top: 15px;
+  right: 25px;
 }
 
-.flower2{
-bottom:20px;
-left:40px;
+.flower2 {
+  bottom: 20px;
+  left: 25px;
 }
 
-.cham1{
-top:15px;
-left:20px;
+.cham1 {
+  top: 15px;
+  left: 15px;
 }
 
-.cham2{
-top:25px;
-right:20px;
+.cham2 {
+  top: 20px;
+  right: 15px;
 }
 
-.cham3{
-bottom:20px;
-left:45%;
+.cham3 {
+  bottom: 15px;
+  left: 42%;
 }
