@@ -15,9 +15,133 @@
     rel="stylesheet">
 
   <link rel="stylesheet" href="style.css" />
+  <style>
+  /* 21+ AGE VERIFICATION POPUP */
+  #ageGate {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(8, 8, 8, 0.97);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .age-gate-box {
+    width: min(460px, 100%);
+    background: #111;
+    border: 1px solid #b89445;
+    padding: 35px 28px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+  }
+
+  .age-gate-box h2 {
+    margin-top: 0;
+    font-family: "Cormorant Garamond", serif;
+    font-size: 2.2rem;
+    color: #d2b46c;
+  }
+
+  .age-gate-box p {
+    color: #eee;
+    line-height: 1.6;
+  }
+
+  .age-date-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1.2fr;
+    gap: 10px;
+    margin: 22px 0;
+  }
+
+  .age-date-fields input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 8px;
+    text-align: center;
+    border: 1px solid #777;
+    background: #fff;
+    color: #111;
+    font-size: 1rem;
+  }
+
+  #verifyAgeButton {
+    width: 100%;
+    padding: 13px 18px;
+    border: 0;
+    background: #b89445;
+    color: #111;
+    font-weight: 700;
+    cursor: pointer;
+    font-size: 1rem;
+  }
+
+  #ageMessage {
+    min-height: 24px;
+    margin: 15px 0 0;
+    color: #f1d58b;
+    font-weight: 600;
+  }
+</style>
 </head>
 
 <body>
+  <!-- 21+ AGE VERIFICATION POPUP -->
+<div id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageGateTitle">
+
+  <div class="age-gate-box">
+
+    <h2 id="ageGateTitle">Age Verification</h2>
+
+    <p>
+      You must be 21 years of age or older to enter Lunar Reserve.
+    </p>
+
+    <p>
+      Please enter your date of birth.
+    </p>
+
+    <div class="age-date-fields">
+
+      <input
+        type="number"
+        id="birthMonth"
+        min="1"
+        max="12"
+        placeholder="MM"
+        aria-label="Birth month">
+
+      <input
+        type="number"
+        id="birthDay"
+        min="1"
+        max="31"
+        placeholder="DD"
+        aria-label="Birth day">
+
+      <input
+        type="number"
+        id="birthYear"
+        min="1900"
+        max="2100"
+        placeholder="YYYY"
+        aria-label="Birth year">
+
+    </div>
+
+    <button
+      type="button"
+      id="verifyAgeButton">
+      Verify Age
+    </button>
+
+    <p id="ageMessage" aria-live="polite"></p>
+
+  </div>
+
+</div>
 
   <!-- TOP BANNER -->
   <div class="top-banner">
@@ -783,7 +907,136 @@
 
   </footer>
 
+<!-- AGE VERIFICATION JAVASCRIPT -->
+<script>
 
+  const ageGate = document.getElementById("ageGate");
+  const ageMessage = document.getElementById("ageMessage");
+  const verifyAgeButton = document.getElementById("verifyAgeButton");
+
+  // If already verified during this browser session,
+  // do not show the popup again.
+  if (sessionStorage.getItem("lunarReserveAgeVerified") === "true") {
+    ageGate.style.display = "none";
+  }
+
+  function verifyAge() {
+
+    const month =
+      parseInt(document.getElementById("birthMonth").value);
+
+    const day =
+      parseInt(document.getElementById("birthDay").value);
+
+    const year =
+      parseInt(document.getElementById("birthYear").value);
+
+
+    // Make sure all three fields were entered.
+    if (!month || !day || !year) {
+
+      ageMessage.textContent =
+        "Please enter your complete date of birth.";
+
+      return;
+    }
+
+
+    const birthDate =
+      new Date(year, month - 1, day);
+
+
+    // Check for impossible dates such as February 31.
+    if (
+      birthDate.getFullYear() !== year ||
+      birthDate.getMonth() !== month - 1 ||
+      birthDate.getDate() !== day
+    ) {
+
+      ageMessage.textContent =
+        "Please enter a valid date of birth.";
+
+      return;
+    }
+
+
+    const today = new Date();
+
+
+    // Do not allow a future birthday.
+    if (birthDate > today) {
+
+      ageMessage.textContent =
+        "Please enter a valid date of birth.";
+
+      return;
+    }
+
+
+    let age =
+      today.getFullYear() - birthDate.getFullYear();
+
+
+    const birthdayHasPassed =
+      today.getMonth() > birthDate.getMonth() ||
+      (
+        today.getMonth() === birthDate.getMonth() &&
+        today.getDate() >= birthDate.getDate()
+      );
+
+
+    if (!birthdayHasPassed) {
+      age--;
+    }
+
+
+    // Allow access only if the visitor is 21+.
+    if (age >= 21) {
+
+      sessionStorage.setItem(
+        "lunarReserveAgeVerified",
+        "true"
+      );
+
+      ageGate.style.display = "none";
+
+    } else {
+
+      ageMessage.textContent =
+        "You must be 21 or older to enter this website.";
+
+    }
+
+  }
+
+
+  // Check age when Verify Age is clicked.
+  verifyAgeButton.addEventListener(
+    "click",
+    verifyAge
+  );
+
+
+  // Also allow Enter to submit the birthday.
+  document.querySelectorAll(
+    "#birthMonth, #birthDay, #birthYear"
+  ).forEach(function(field) {
+
+    field.addEventListener(
+      "keydown",
+      function(event) {
+
+        if (event.key === "Enter") {
+          verifyAge();
+        }
+
+      }
+    );
+
+  });
+
+</script>
+  
   <!-- ORDER JAVASCRIPT -->
   <script>
 
